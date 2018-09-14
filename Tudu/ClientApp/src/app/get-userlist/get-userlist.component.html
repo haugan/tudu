@@ -1,0 +1,32 @@
+<h1 class="display-1">Users</h1>
+
+<p class="lead">
+  Data is fetched from the JSON Placeholder API,
+  through ASP.NET Core Controllers and Services - after being invoked by Angular components.
+</p>
+
+<div class="table-responsive-md" *ngIf="users">
+  <table class="table table-sm table-bordered table-hover table-dark">
+    <caption>List of users retrieved from <abbr title="Application Programming Interface" class="initialism">API</abbr>.</caption>
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Website</th>
+        <th scope="col">Company</th>
+        <th scope="col">City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" (click)="onSelect(user)">
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.website}}</td>
+        <td>{{user.company}}</td>
+        <td>{{user.city}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
